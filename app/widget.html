@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #myGrid {
+        width: 100%;
+        height: 100vh; /* Adjust this as needed */
+      }
+
+      /* Adjust the height for smaller devices */
+      @media (max-width: 600px) {
+        #myGrid {
+          height: 50vh; /* Adjust this as needed */
+        }
+      }
+    </style>
+    <meta charset="UTF-8">
+    <script src="https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <script src="widgetsdk-min.js"></script>
+  </head>
+  <body>
+    <div id="myGrid" class="ag-theme-quartz" style="height: 500px"></div>
+
+  <script>
+    ZOHO.CREATOR.init()
+            .then(function (data) {
+              console.log(data);
+              config = {
+                appName: "Omnia",
+                reportName: "Contatti_Report",
+                criteria: "Area_ISF in thisapp.getAreaUser()",
+              }
+
+              //get all records API
+              ZOHO.CREATOR.API.getAllRecords(config).then(function (response) {
+                console.log(response);
+
+                const gridOptions = {
+                  // Row Data: The data to be displayed.
+                  rowData: response.data,
+                  // Column Definitions: Defines the columns to be displayed.
+                  columnDefs: [
+                    {field: "Nome.display_value", headerName: "Nome e Cognome", sortable: true, filter: true},
+                    {field: "Email", sortable: true, filter: true},
+                    {field: "Cellulare", sortable: true, filter: true},
+                  ],
+                  domLayout: 'autoHeight',
+                };
+
+
+                // Your Javascript code to create the grid
+                const myGridElement = document.querySelector('#myGrid');
+                agGrid.createGrid(myGridElement, gridOptions);
+
+              });
+            });
+
+
+    // Grid Options: Contains all of the grid configurations
+    // Grid Options: Contains all of the grid configurations
+
+
+  </script>
+  </body>
+</html>

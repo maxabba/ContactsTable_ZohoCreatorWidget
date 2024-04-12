@@ -1,0 +1,9 @@
+{
+  "service": "CREATOR",
+  "cspDomains": {
+    "connect-src": [
+      "https://cdn.jsdelivr.net/*"
+    ]
+  },
+  "config": []
+}
