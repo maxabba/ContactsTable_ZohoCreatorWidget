@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="83a29d6e-ad62-46e1-bc13-5f5f57fb1ddc" name="Widget" url="https://widget.abbattista.pw">
+        <fileTransfer rootFolder="/public_html" host="widget.abbattista.pw" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
